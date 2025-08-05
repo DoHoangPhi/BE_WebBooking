@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Get CRUD</title>
+    <style>
+        table {
+            font-family: arial, sans-serif;
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        td,
+        th {
+            border: 1px solid #dddddd;
+            text-align: left;
+            padding: 8px;
+        }
+
+        tr:nth-child(even) {
+            background-color: #dddddd;
+        }
+    </style>
+</head>
+
+<body>
+    get crud from controller
+    <table>
+        <tr>
+            <th>email</th>
+            <th>firstName</th>
+            <th>lastName</th>
+            <th>address</th>
+            <th>action</th>
+        </tr>
+        <% for(let i=0; i < datatable.length; i++) { %>
+            <tr>
+                <td>
+                    <%= datatable[i].email %>
+                </td>
+                <td>
+                    <%= datatable[i].firstName %>
+                </td>
+                <td>
+                    <%= datatable[i].lastName %>
+                </td>
+                <td>
+                    <%= datatable[i].address %>
+                </td>
+                <td>
+                    <a href="/edit-crud?id=<%=datatable[i].id %>" class="btn-edit" type="button">Edit</a>
+                    <button class="btn-edit" type="button">Delete</button>
+                </td>
+            </tr>
+            <% } %>
+    </table>
+</body>
+
+</html>
